@@ -14,14 +14,12 @@
   <meta property="og:url" content="https://vjudge.net/group/cpi_cumilla">
   <meta property="og:type" content="website">
 
-
   <!-- Twitter Meta -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Join CPI VJudge Group">
   <meta name="twitter:description" content="The official VJudge programming group for Cumilla Polytechnic students.">
 
-
-  <!-- Structured Data (FAQ + Contest Rules) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,76 +54,426 @@
         "name": "What are the CPI Clash Contest Rules & Fair Play Policy?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "📜 CPI Clash Contest Rules & Fair Play Policy\n\nTo ensure a fair and competitive environment for all participants, the following rules must be strictly followed:\n\n❌ No Cheating or Plagiarism: Copying code, using unauthorized tools, or sharing solutions is strictly forbidden.\n\n🤖 No Use of AI Assistance: Tools like ChatGPT, GitHub Copilot, or Bard are not allowed during contests.\n\n🧑‍💻 Individual Effort: All contests are solo unless clearly marked as team contests.\n\n🌐 Limited Internet Usage: Only use official language documentation (e.g., C++ STL, Python Docs). Googling problem descriptions or looking for solutions is not allowed.\n\n⏱️ Timely Submission: Submit within the contest window. No external or late submissions will be ranked. Multiple accounts are not allowed.\n\n🔍 Anti-Cheating Measures: MOSS and other monitoring tools are used to detect plagiarism. Suspicious activities will be reviewed.\n\n⚠️ Violation Consequences: Disqualification from the contest, bans from future contests, and possible permanent blacklisting.\n\n✅ Compete with Integrity: These contests are about learning and improving. Compete honestly and make CPI proud!"
+          "text": "\ud83d\udcdc CPI Clash Contest Rules & Fair Play Policy\n\nTo ensure a fair and competitive environment for all participants, the following rules must be strictly followed:\n\n\u274c No Cheating or Plagiarism: Copying code, using unauthorized tools, or sharing solutions is strictly forbidden.\n\n\ud83e\udd16 No Use of AI Assistance: Tools like ChatGPT, GitHub Copilot, or Bard are not allowed during contests.\n\n\ud83e\uddd1\u200d\ud83d\udcbb Individual Effort: All contests are solo unless clearly marked as team contests.\n\n\ud83c\udf10 Limited Internet Usage: Only use official language documentation (e.g., C++ STL, Python Docs). Googling problem descriptions or looking for solutions is not allowed.\n\n\u23f1\ufe0f Timely Submission: Submit within the contest window. No external or late submissions will be ranked. Multiple accounts are not allowed.\n\n\ud83d\udd0d Anti-Cheating Measures: MOSS and other monitoring tools are used to detect plagiarism. Suspicious activities will be reviewed.\n\n\u26a0\ufe0f Violation Consequences: Disqualification from the contest, bans from future contests, and possible permanent blacklisting.\n\n\u2705 Compete with Integrity: These contests are about learning and improving. Compete honestly and make CPI proud!"
         }
       }
     ]
   }
   </script>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #f4f6f9;
+    :root {
+      --primary: #6C63FF;
+      --secondary: #4D44DB;
+      --dark: #2F2E41;
+      --light: #F8F9FA;
+      --accent: #FF6584;
+      --success: #28A745;
+      --code-bg: #1E1E2D;
+    }
+    
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      color: #333;
     }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    /* Animated gradient background */
+    .bg-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(-45deg, #f5f7fa, #e4e8eb, #d9e0e5, #c8d4e0);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+    
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
     header {
-      background: #2c3e50;
-      color: white;
-      padding: 30px 20px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 2rem 1rem;
       text-align: center;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      overflow: hidden;
     }
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(108, 99, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+      z-index: -1;
     }
-    a.button {
+    
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       display: inline-block;
-      margin-top: 20px;
-      background: #27ae60;
-      color: white;
-      padding: 12px 20px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
     }
+    
+    .tagline {
+      font-size: 1.2rem;
+      color: var(--dark);
+      opacity: 0.8;
+      font-weight: 300;
+    }
+    
+    main {
+      max-width: 1100px;
+      margin: 3rem auto;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    main::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%236C63FF" fill-opacity="0.1" d="M30,10 Q50,0 70,10 T90,30 Q100,50 90,70 T70,90 Q50,100 30,90 T10,70 Q0,50 10,30 T30,10"></path></svg>');
+      background-size: contain;
+      z-index: -1;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--secondary);
+      position: relative;
+      display: inline-block;
+    }
+    
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 2px;
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    
+    .highlight-box {
+      background: rgba(108, 99, 255, 0.1);
+      border-left: 4px solid var(--primary);
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 2rem 0;
+    }
+    
+    .code-snippet {
+      background: var(--code-bg);
+      color: #f8f8f2;
+      padding: 1.5rem;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      margin: 2rem 0;
+      overflow-x: auto;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .button-container {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+    
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+      border: none;
+      font-size: 1rem;
+    }
+    
+    a.button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+    }
+    
+    a.button:active {
+      transform: translateY(1px);
+    }
+    
+    a.button i {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+    
+    a.button.secondary {
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      box-shadow: none;
+    }
+    
+    a.button.secondary:hover {
+      background: rgba(108, 99, 255, 0.1);
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .feature-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: var(--dark);
+    }
+    
     footer {
       text-align: center;
-      padding: 20px;
-      color: #888;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #666;
+      margin-top: 4rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    
+    .social-links a {
+      color: var(--dark);
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--primary);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      main {
+        padding: 2rem;
+        margin: 2rem 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.7rem;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Floating animation for decorative elements */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    /* Glow effect */
+    .glow {
+      text-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
     }
   </style>
 </head>
 <body>
+  <div class="bg-wrapper"></div>
+  
   <header>
-    <h1>Cumilla Polytechnic Institute Programming Club</h1>
-    <p>Competitive Programming Group</p>
+    <div class="container">
+      <h1 class="glow">CPI Competitive Programming Club</h1>
+      <p class="tagline">Where algorithms meet creativity</p>
+    </div>
   </header>
 
   <main>
-    <h2>Welcome to the CPI VJudge Group</h2>
+    <h2>Welcome to CPI VJudge Group</h2>
     <p>
-      This group is created to bring together the passionate programmers of Cumilla Polytechnic Institute under one roof.
-      Through this VJudge platform, we aim to host friendly contests, improve our coding skills, and prepare for national and international programming competitions.
-    </p>
-    <p>
-      Students from all departments of CPI are invited to participate. Whether you're a beginner or advanced coder, this is your space to grow, learn, and compete.
+      Join the vibrant community of passionate programmers from Cumilla Polytechnic Institute. 
+      Our VJudge group is designed to foster growth, collaboration, and healthy competition 
+      among students of all skill levels.
     </p>
     
-    <a href="https://vjudge.net/group/cpi_cumilla" class="button" target="_blank">Join Our Group on VJudge</a>
+    <div class="highlight-box">
+      <p>
+        <i class="fas fa-star" style="color: var(--accent);"></i> 
+        <strong>Featured on Codeforces Blog:</strong> 
+        <a href="https://codeforces.com/blog/entry/144058" target="_blank" style="color: var(--primary); font-weight: 600;">
+          Read our story on Codeforces
+        </a>
+      </p>
+    </div>
+    
+    <div class="button-container">
+      <a href="https://vjudge.net/group/cpi_cumilla" class="button" target="_blank">
+        <i class="fas fa-users"></i> Join VJudge Group
+      </a>
+      <a href="#rules" class="button secondary">
+        <i class="fas fa-scroll"></i> Contest Rules
+      </a>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <h3 class="feature-title">Regular Contests</h3>
+        <p>Participate in weekly programming challenges to test and improve your skills against peers.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3 class="feature-title">Learning Resources</h3>
+        <p>Access curated problem sets and tutorials tailored for polytechnic students.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3 class="feature-title">Community Support</h3>
+        <p>Get help from senior members and collaborate on solving complex problems together.</p>
+      </div>
+    </div>
+    
+    <section id="rules">
+      <h2>Contest Rules & Fair Play</h2>
+      <div class="code-snippet">
+        <pre style="white-space: pre-wrap; font-family: 'JetBrains Mono', monospace;">
+📜 <span style="color: #FF6584;">CPI Clash Contest Rules & Fair Play Policy</span>
+
+To ensure a fair and competitive environment for all participants:
+
+<span style="color: #6C63FF;">❌ No Cheating or Plagiarism</span>
+Copying code or sharing solutions is strictly forbidden.
+
+<span style="color: #6C63FF;">🤖 No AI Assistance</span>
+Tools like ChatGPT, Copilot, or Bard are prohibited.
+
+<span style="color: #6C63FF;">👨💻 Individual Effort</span>
+All contests are solo unless specified as team events.
+
+<span style="color: #6C63FF;">🌐 Limited Internet</span>
+Only official language documentation is permitted.
+
+<span style="color: #6C63FF;">⏱️ Timely Submission</span>
+Submit within contest window - no late submissions ranked.
+
+<span style="color: #6C63FF;">🔍 Anti-Cheating</span>
+MOSS and monitoring tools actively detect plagiarism.
+
+<span style="color: #FF6584;">⚠️ Violations:</span> Disqualification, contest bans, or permanent blacklisting.
+
+<span style="color: #28A745;">✅ Compete with integrity and make CPI proud!</span>
+        </pre>
+      </div>
+    </section>
   </main>
 
   <footer>
-    © 2025 Cumilla Polytechnic Competitive Programming Club • All Rights Reserved
+    <div class="social-links">
+      <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="#" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+      <a href="#" target="_blank" aria-label="Codeforces"><i class="fas fa-code"></i></a>
+    </div>
+    <p>© 2025 Cumilla Polytechnic Competitive Programming Club</p>
+    <p>All Rights Reserved | Crafted with <span style="color: #FF6584;">♥</span> by CPI Coders</p>
   </footer>
 </body>
 </html>
